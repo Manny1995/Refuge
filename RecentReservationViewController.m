@@ -7,6 +7,11 @@
 //
 
 #import "RecentReservationViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
+
+NSNumber *latitude, *longitude;
 
 @interface RecentReservationViewController ()
 
@@ -23,9 +28,22 @@
     NSData *imageData = [defaults dataForKey:@"image"];
     UIImage *contactImage = [UIImage imageWithData:imageData];
     NSString *string = [defaults stringForKey:@"name"];
-    self.nameLabel.text = string;
+    latitude = [defaults objectForKey:@"latitude"];
+    longitude = [defaults objectForKey:@"longitude"];
     
-    [self.QRCode setImage:contactImage];
+    
+    
+    if (string == nil)
+        self.nameLabel.text = @"No Reservations";
+    else
+        self.nameLabel.text = string;
+
+    
+    if (imageData == nil)
+        [self.QRCode setImage:[UIImage imageNamed:@"not2.png"]];
+
+    else
+        [self.QRCode setImage:contactImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,4 +61,38 @@
 }
 */
 
+- (IBAction)phoneButtonPressed:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:4088874946"]];
+
+}
+
+- (IBAction)navigationButtonPressed:(id)sender {
+    
+
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = (CLLocationDegrees) [latitude doubleValue];
+    coordinate.longitude = (CLLocationDegrees)[longitude doubleValue];
+    
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        
+        MKPlacemark* placeMark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+        MKMapItem* destination =  [[MKMapItem alloc] initWithPlacemark:placeMark];
+        
+        if([destination respondsToSelector:@selector(openInMapsWithLaunchOptions:)])
+        {
+            [destination openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeWalking}];
+        }
+    }
+
+}
+
+- (IBAction)infoButtonPressed:(id)sender {
+    
+    
+    
+}
 @end

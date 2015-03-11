@@ -94,20 +94,28 @@
 
 - (IBAction)reserveButtonPressed:(id)sender {
     
-    
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.targetPoint.latitude, self.targetPoint.longitude);
+
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *imageData = UIImageJPEGRepresentation(self.qrImageView.image, 100);
+    NSNumber *latitude = [NSNumber numberWithDouble:coordinate.latitude];
+    NSNumber *longitude = [NSNumber numberWithDouble:coordinate.longitude];
+
 
     [defaults setObject:imageData forKey:@"image"];
     [defaults setObject:self.nameID forKey:@"name"];
+    [defaults setObject:longitude forKey:@"longitude"];
+    [defaults setObject:latitude forKey:@"latitude"];
+    
+    
 //    [defaults setObject:description forKey:@"lastname"];
 //    [defaults setInteger:age forKey:@"age"];
 //    [defaults setObject:imageData forKey:@"image"];
     [defaults synchronize];
 
-    UIViewController *cont = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"homeScreen"];
-    self.navigationController.viewControllers = @[cont];
+//    UIViewController *cont = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"homeScreen"];
+//    self.navigationController.viewControllers = @[cont];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

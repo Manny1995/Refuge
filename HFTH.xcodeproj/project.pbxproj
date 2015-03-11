@@ -20,6 +20,9 @@
 		3F2D4FEB1AA2FA3200C49F1C /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D4FE01AA2FA3100C49F1C /* rscode.c */; };
 		3F2D4FEC1AA2FA3200C49F1C /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D4FE21AA2FA3100C49F1C /* split.c */; };
 		3F2D4FED1AA2FA3200C49F1C /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D4FE51AA2FA3100C49F1C /* UIImage+MDQRCode.m */; };
+		3F515F961AA7FACE00BE15B9 /* not2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F515F951AA7FACE00BE15B9 /* not2.png */; };
+		3F515F991AA8040600BE15B9 /* rdf1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F515F971AA8040600BE15B9 /* rdf1.png */; };
+		3F515F9A1AA8040600BE15B9 /* telephone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F515F981AA8040600BE15B9 /* telephone5.png */; };
 		3F6357A31AA3ACC8003E70F3 /* Icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6357A21AA3ACC8003E70F3 /* Icon-2.png */; };
 		3F8A2E241AA2AC2C00702F55 /* CustomAnnotationPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A2E231AA2AC2C00702F55 /* CustomAnnotationPin.m */; };
 		3F8A2E271AA2DCC900702F55 /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A2E261AA2DCC900702F55 /* DirectionsViewController.m */; };
@@ -97,6 +100,9 @@
 		3F2D4FE31AA2FA3100C49F1C /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
 		3F2D4FE41AA2FA3100C49F1C /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
 		3F2D4FE51AA2FA3100C49F1C /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
+		3F515F951AA7FACE00BE15B9 /* not2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = not2.png; sourceTree = "<group>"; };
+		3F515F971AA8040600BE15B9 /* rdf1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rdf1.png; sourceTree = "<group>"; };
+		3F515F981AA8040600BE15B9 /* telephone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telephone5.png; sourceTree = "<group>"; };
 		3F6357A21AA3ACC8003E70F3 /* Icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-2.png"; sourceTree = "<group>"; };
 		3F8A2E221AA2AC2C00702F55 /* CustomAnnotationPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationPin.h; sourceTree = "<group>"; };
 		3F8A2E231AA2AC2C00702F55 /* CustomAnnotationPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationPin.m; sourceTree = "<group>"; };
@@ -338,6 +344,9 @@
 		3FA115321AA3607E00D55D8F /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				3F515F971AA8040600BE15B9 /* rdf1.png */,
+				3F515F981AA8040600BE15B9 /* telephone5.png */,
+				3F515F951AA7FACE00BE15B9 /* not2.png */,
 				3FA115391AA3612000D55D8F /* administrator1.png */,
 				3F16F8FF1AA3732400B8CB72 /* location74.png */,
 				3FA1153A1AA3612000D55D8F /* multiple25.png */,
@@ -533,13 +542,16 @@
 				3FA115401AA3629400D55D8F /* notes26.png in Resources */,
 				3F16F9001AA3732400B8CB72 /* location74.png in Resources */,
 				3FA1153F1AA3629400D55D8F /* add139.png in Resources */,
+				3F515F991AA8040600BE15B9 /* rdf1.png in Resources */,
 				3FC94CB01AA2495E00871F10 /* LaunchScreen.xib in Resources */,
 				3F6357A31AA3ACC8003E70F3 /* Icon-2.png in Resources */,
+				3F515F9A1AA8040600BE15B9 /* telephone5.png in Resources */,
 				3FC94CD31AA2657F00871F10 /* MenuTableViewCell.xib in Resources */,
 				3FA115431AA363C000D55D8F /* auricular6.png in Resources */,
 				3FA1153C1AA3612000D55D8F /* multiple25.png in Resources */,
 				3FA115441AA363C000D55D8F /* settings48.png in Resources */,
 				3FC94CAD1AA2495E00871F10 /* Images.xcassets in Resources */,
+				3F515F961AA7FACE00BE15B9 /* not2.png in Resources */,
 				3F16F8FB1AA3662A00B8CB72 /* close47.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,7 +723,7 @@
 				);
 				INFOPLIST_FILE = HFTH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HFTH;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -728,7 +740,7 @@
 				);
 				INFOPLIST_FILE = HFTH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HFTH;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -749,7 +761,7 @@
 				);
 				INFOPLIST_FILE = HFTHTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HFTHTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HFTH.app/HFTH";
 			};
@@ -767,7 +779,7 @@
 				);
 				INFOPLIST_FILE = HFTHTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HFTHTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HFTH.app/HFTH";
 			};

@@ -33,6 +33,8 @@ UIImage *qrImage;
     [self.nameLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:30]];
     [self.nameLabel setTextAlignment:NSTextAlignmentCenter];
      self.descriptionView = [[UITextView alloc] initWithFrame:CGRectMake(16, 360, [UIScreen mainScreen].bounds.size.width - 32, 100)];
+    [self.descriptionView setEditable:NO];
+    [self.descriptionView setSelectable:NO];
     [self.descriptionView setTextAlignment:NSTextAlignmentCenter];
     [self.descriptionView setFont:[UIFont fontWithName:@"HelveticaNeue" size:20]];
    

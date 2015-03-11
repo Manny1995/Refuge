@@ -78,9 +78,13 @@ PFObject *sendObject;
 -(void) retrieveFromParse
 {
     PFQuery *query = [[PFQuery alloc] initWithClassName:@"Posted_Reservations"];
+    //[query findObjects];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         closestLocationsArray = [[NSMutableArray alloc] initWithArray:objects];
         [self reloadPins];
+        
+        
     }];
 
 }
@@ -103,8 +107,8 @@ PFObject *sendObject;
     
     NSLog(@"%f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
     double scalingFactor = ABS( (cos(2 * M_PI * currentLocation.coordinate.latitude / 360.0) ));
-    double spanX = 0.001/100.0;
-    double spanY = 0.001/(scalingFactor * 100.0);
+    double spanX = 0.001/1000.0;
+    double spanY = 0.001/(scalingFactor * 1000.0);
     
     MKCoordinateSpan span;
     span.latitudeDelta = spanX;
@@ -132,6 +136,7 @@ PFObject *sendObject;
 -(void)reloadPins
 {
     
+    
     for (NSUInteger i = 0; i < [closestLocationsArray count]; i++)
     {
         PFObject *object = [closestLocationsArray objectAtIndex:i];
@@ -142,19 +147,22 @@ PFObject *sendObject;
         
         CustomAnnotationPin *annotation = [[CustomAnnotationPin alloc] initWithLocation:location.coordinate];
 
-       // annotation.coordinate = location.coordinate;
-        //[annotation ];
         
         [annotation setObject:[closestLocationsArray objectAtIndex:i]];
         //[annotation setTitle:object[@"Name"]];
         
         NSLog(@"@%@", annotation.object);
         
+        if (annotationArray == nil)
+            annotationArray = [[NSMutableArray alloc] initWithObjects:annotation, nil];
+        else
         [annotationArray addObject:annotation];
         
         [self.mapView addAnnotation:annotation];
 
     }
+    
+    
     
 }
 

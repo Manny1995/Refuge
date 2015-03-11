@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RecentReservationViewController : UIViewController
+
 @property (strong, nonatomic) IBOutlet UIImageView *QRCode;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-
+- (IBAction)phoneButtonPressed:(id)sender;
+- (IBAction)navigationButtonPressed:(id)sender;
+- (IBAction)infoButtonPressed:(id)sender;
 @end

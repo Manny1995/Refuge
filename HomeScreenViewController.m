@@ -20,7 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.menuView = [[UITableView alloc] initWithFrame:CGRectMake(16, 244, 288, 395)];
+    self.menuView = [[UITableView alloc] initWithFrame:CGRectMake(40, 260, 280, 350)];
+    [self.menuView setScrollEnabled:NO];
     [self.menuView setDelegate:self];
     [self.menuView setDataSource:self];
     
@@ -102,6 +103,16 @@
     if (indexPath.row == 1)
     {
         [self performSegueWithIdentifier:@"slidingToRecentReservation" sender:self];
+    }
+    
+    if (indexPath.row == 2)
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:4088874946"]];
+    }
+    
+    if (indexPath.row == 3)
+    {
+        
     }
 }
 

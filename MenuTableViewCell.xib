@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,16 +14,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5VA-7G-eD7">
-                        <rect key="frame" x="8" y="9" width="64" height="64"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5VA-7G-eD7">
+                        <rect key="frame" x="18" y="16" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="dNG-Xo-fsg"/>
+                            <constraint firstAttribute="width" constant="50" id="pCs-oR-NHN"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-aA-Yw8">
-                        <rect key="frame" x="105" y="30" width="207" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-aA-Yw8">
+                        <rect key="frame" x="86" y="0.0" width="236" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="81" id="GUb-RR-iSk"/>
+                            <constraint firstAttribute="width" constant="236" id="GgI-Yk-jqb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="5VA-7G-eD7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="IL8-Tc-CqT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GFp-aA-Yw8" secondAttribute="trailing" constant="-10" id="Mgt-z1-fuD"/>
+                    <constraint firstItem="GFp-aA-Yw8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Yw8-Ju-Htg"/>
+                    <constraint firstItem="GFp-aA-Yw8" firstAttribute="leading" secondItem="5VA-7G-eD7" secondAttribute="trailing" constant="18" id="aVq-w7-UsW"/>
+                    <constraint firstItem="5VA-7G-eD7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="b7l-0c-2kp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GFp-aA-Yw8" secondAttribute="bottom" constant="-8" id="c27-dv-MnK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5VA-7G-eD7" secondAttribute="bottom" constant="7" id="wnJ-Wh-OSP"/>
+                    <constraint firstItem="GFp-aA-Yw8" firstAttribute="leading" secondItem="5VA-7G-eD7" secondAttribute="trailing" constant="18" id="xfS-pM-Vfa"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="menuImage" destination="5VA-7G-eD7" id="KN2-ca-NJ6"/>

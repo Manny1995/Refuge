@@ -49,23 +49,34 @@ CLPlacemark *placemark;
     
     
     
-    NSString *addressString = self.streetLabel.text;
+    NSMutableString *addressString = [[NSMutableString alloc] initWithString:self.streetLabel.text];
+    [addressString appendString:@", "];
+    [addressString appendString:self.cityLabel.text];
+    [addressString appendString:@", "];
+    [addressString appendString:self.stateLabel.text];
     
-
-    addressString = [NSString stringWithFormat:@"%@%@", addressString, self.cityLabel.text];
-
-    addressString = [NSString stringWithFormat:@"%@, ", addressString];
     
-    addressString = [NSString stringWithFormat:@"%@%@", addressString, self.stateLabel.text];
     
-    NSLog(@"%@", addressString);
+    NSLog(@"%@\n", addressString);
     
     [geocoder geocodeAddressString:addressString
                  completionHandler:^(NSArray* placemarks, NSError* error){
-//                     for (CLPlacemark* aPlacemark in placemarks)
-//                     {
-//                         
-//                     }
+                     NSInteger i = 0;
+                     for (CLPlacemark* aPlacemark in placemarks)
+                     {
+//                         if (aPlacemark)
+//                         {
+//                             placemark = [placemarks objectAtIndex:i];
+//                             break;
+//                         }
+                         
+                         
+                         NSLog(@"%@\n %.2f,%.2f",[placemark description], placemark.location.horizontalAccuracy, placemark.location.verticalAccuracy);
+
+                         
+                         i++;
+                     }
+                     
                      placemark = [placemarks objectAtIndex:0];
                      
                      PFGeoPoint *point = [[PFGeoPoint alloc] init];

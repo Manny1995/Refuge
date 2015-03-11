@@ -19,7 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.menuView = [[UITableView alloc] initWithFrame:CGRectMake(16, 244, 288, 395)];
+    self.menuView = [[UITableView alloc] initWithFrame:CGRectMake(40, 260, 280, 395)];
+    [self.menuView setScrollEnabled:NO];
     [self.menuView setDelegate:self];
     [self.menuView setDataSource:self];
 
