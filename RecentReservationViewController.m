@@ -95,4 +95,19 @@ NSNumber *latitude, *longitude;
     
     
 }
+
+- (IBAction)cancelReservationButtonPressed:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"image"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"latitude"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"longitude"];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Reservation deleted!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+
+
+}
 @end

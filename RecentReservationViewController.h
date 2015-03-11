@@ -15,4 +15,6 @@
 - (IBAction)phoneButtonPressed:(id)sender;
 - (IBAction)navigationButtonPressed:(id)sender;
 - (IBAction)infoButtonPressed:(id)sender;
+- (IBAction)cancelReservationButtonPressed:(id)sender;
+
 @end
